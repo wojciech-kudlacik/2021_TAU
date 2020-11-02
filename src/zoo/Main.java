@@ -1,8 +1,7 @@
 package zoo;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -68,7 +67,13 @@ public class Main {
 				addAnimal(animal);
 				break;
 			case 3:
-				System.out.println("DELETE");
+				System.out.println("\nEnter the index of animal you want to delete: ");
+				try {
+					int animalIndex = input.nextInt();
+					deleteAnimal(animalIndex);
+				} catch(InputMismatchException e) {
+					System.out.println("Error: " + e);
+				}
 				break;
 			default:
 				System.out.println("UNKNOWN ERR");
@@ -87,9 +92,22 @@ public class Main {
 	public void addAnimal(String animal) {
 		if (animal.matches(".*\\d.*")) {
 			System.out.println("Name can't contain numbers");
+		} else if(animals.contains(animal)) {
+			System.out.println("Name is already in the list");
+		} else if(animal.length() <= 1) {
+			System.out.println("Name is too short");
 		} else {
 			animals.add(animal);
 			System.out.println("Animal added");
+		}
+	}
+	
+	public void deleteAnimal(int animalIndex) throws IndexOutOfBoundsException {
+		try {
+			animals.remove(animalIndex);
+			System.out.println("Animal removed");
+		} catch(IndexOutOfBoundsException e) {
+			System.out.println("This index is not available: " + e);
 		}
 	}
 	
