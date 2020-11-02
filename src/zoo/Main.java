@@ -115,8 +115,6 @@ public class Main {
 		} else {
 			System.out.println("This index is not available");
 		}
-
 	}
-	
 	
 }

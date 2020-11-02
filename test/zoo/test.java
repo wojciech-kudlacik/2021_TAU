@@ -1,26 +1,41 @@
 package zoo;
 
-import org.junit.After;
-import org.junit.Before;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 class test {
 	
-	@Before
+	private Main main = new Main();
+	
+	@BeforeEach
 	public void setUp() {
-		System.out.println("BEFORE");
+		main.addAnimal("Leon");
+		main.addAnimal("Felix");
+		main.addAnimal("Dumbo");
+	}
+	
+	@AfterEach
+	public void tearDown() {
 
 	}
 	
-	@After
-	public void tearDown() {
-		System.out.println("AFTER");
-
-	}
-
 	@Test
-	public void test() {
-		System.out.println("TEST");
+	public void testAddAnimals() {
+		int expected = 3;
+		int actual = main.animals.size(); 
+		assertEquals(expected, actual);
 	}
+	
+	@Test
+	public void testListA() {
+		String[] expectedList = {"Leon", "Felix", "Dumbo"};
+		String[] actualList = main.animals.toArray(new String[0]);
+		assertArrayEquals(expectedList, actualList);
+		
+	}
+	
 
 }
