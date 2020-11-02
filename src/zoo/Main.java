@@ -1,10 +1,12 @@
 package zoo;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 	boolean exit;
+	ArrayList<String> animals = new ArrayList<String>();
 	
 	
 	public static void main(String[] args) {
@@ -47,16 +49,20 @@ public class Main {
 	}
 	
 	public void selectAction(int choice) {
+		Scanner input = new Scanner(System.in);
+		
 		switch(choice) {
 			case 0:
 				exit = true;
 				System.out.println("See you later, aligator");
 				break;
 			case 1:
-				System.out.println("LIST");
+				listAnimals();
 				break;
 			case 2:
-				System.out.println("ADD");
+				System.out.println("\nEnter the name of an animal: ");
+				String animal = input.nextLine();
+				addAnimal(animal);
 				break;
 			case 3:
 				System.out.println("DELETE");
@@ -64,6 +70,21 @@ public class Main {
 			default:
 				System.out.println("UNKNOWN ERR");
 				
+		}
+	}
+	
+	public void listAnimals() {
+		System.out.println("Name of all Animals: " + animals);
+	}
+	
+	public void addAnimal(String animal) {
+
+		
+		if (animal.matches(".*\\d.*")) {
+			System.out.println("Name can't contain numbers");
+		} else {
+			animals.add(animal);
+			System.out.println("Animal added");
 		}
 	}
 	
