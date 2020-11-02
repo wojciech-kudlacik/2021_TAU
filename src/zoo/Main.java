@@ -1,6 +1,7 @@
 package zoo;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -14,6 +15,8 @@ public class Main {
 		main.runMenu();
 	}
 	
+
+	//MENU
 	
 	public void runMenu() {
 		while (!exit) {
@@ -73,13 +76,15 @@ public class Main {
 		}
 	}
 	
+	
+	//OPERATIONS
+	
 	public void listAnimals() {
-		System.out.println("Name of all Animals: " + animals);
+		System.out.println("\nList of all animals:");
+		animals.forEach(System.out::println);
 	}
 	
 	public void addAnimal(String animal) {
-
-		
 		if (animal.matches(".*\\d.*")) {
 			System.out.println("Name can't contain numbers");
 		} else {
@@ -88,14 +93,5 @@ public class Main {
 		}
 	}
 	
-//	
-//	private static void addAnimal(String animal) {
-//		
-//		if (animal.matches(".*\\d.*")) {
-//			System.out.println("Name can't contain numbers");
-//		} else {
-//			animals.add((String) animal);
-//			System.out.println("Animal added");
-//		}
-//	}
+	
 }
