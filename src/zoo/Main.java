@@ -72,7 +72,7 @@ public class Main {
 					int animalIndex = input.nextInt();
 					deleteAnimal(animalIndex);
 				} catch(InputMismatchException e) {
-					System.out.println("Error: " + e);
+					System.out.println("Input is not a number: " + e);
 				}
 				break;
 			default:
@@ -103,12 +103,19 @@ public class Main {
 	}
 	
 	public void deleteAnimal(int animalIndex) throws IndexOutOfBoundsException {
-		try {
-			animals.remove(animalIndex);
-			System.out.println("Animal removed");
-		} catch(IndexOutOfBoundsException e) {
-			System.out.println("This index is not available: " + e);
+		int correctIndex = animalIndex - 1; 
+		
+		if (correctIndex >= 0) {
+			try {
+				animals.remove(correctIndex);
+				System.out.println("Animal removed");
+			} catch(IndexOutOfBoundsException e) {
+				System.out.println("This index is not available: " + e);
+			}
+		} else {
+			System.out.println("This index is not available");
 		}
+
 	}
 	
 	
