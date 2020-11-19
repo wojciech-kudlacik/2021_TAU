@@ -1,13 +1,21 @@
-from selenium import webdriver
+# hack for importing methods from different packages
+# if you're using pycharm - don't mind the unresolved reference error
+# IT. WILL. WORK.
+
+import sys, os
+
+sys.path.insert(0, os.path.abspath('..'))
+from drivers_package.drivers import choose_drivers
+from login_steam import login_to_steam as login
+
+# from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from login_steam import login_to_steam as login
 
-
-driver = webdriver.Chrome()
+driver = choose_drivers("chrome")
 
 # login
 login(driver)
@@ -60,8 +68,3 @@ finally:
     print('test done')
 
 driver.quit()
-
-
-
-
-
