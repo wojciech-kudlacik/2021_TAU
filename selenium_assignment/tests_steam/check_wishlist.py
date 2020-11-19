@@ -3,6 +3,7 @@
 # IT. WILL. WORK.
 
 import sys, os
+import time
 
 sys.path.insert(0, os.path.abspath('..'))
 from drivers_package.drivers import choose_drivers
@@ -15,7 +16,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
 
-driver = choose_drivers("chrome")
+driver = choose_drivers("firefox")
 
 # login
 login(driver)
@@ -31,11 +32,11 @@ finally:
 
 # choose cyberpunk 2077 from the list
 try:
-    element = WebDriverWait(driver, 5).until(
-        EC.presence_of_element_located((By.XPATH, '//*[@id="search_resultsRows"]/a[1]'))
+    element = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/div[7]/div[4]/form/div[1]/div/div[1]/div[3]/div/div[3]/a[1]/div[1]/img'))
     )
 finally:
-    driver.find_element_by_xpath('//*[@id="search_resultsRows"]/a[1]').click()
+    driver.execute_script("arguments[0].click();", element)
 
 # add to wishlist
 try:
@@ -45,11 +46,13 @@ try:
 finally:
     driver.find_element_by_xpath('//*[@id="add_to_wishlist_area"]/a').click()
     # go to wishlist
+    # hack for opera
+    time.sleep(2)
     driver.find_element_by_id("wishlist_link").click()
 
 # check if the cyberpunk 2077 is on wishlist
 try:
-    element = WebDriverWait(driver, 5).until(
+    element = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.XPATH, '//*[@id="wishlist_ctn"]/div/a'))
     )
 finally:
