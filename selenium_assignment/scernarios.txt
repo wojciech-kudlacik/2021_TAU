@@ -1,3 +1,0 @@
-1. Strony do testowania: store.steampowered.com, epic games store
-2. Proponowane scenariusze: logowanie, wyszukiwanie produktu, dodanie gry do koszyka, sprawdzenie danych w profilu
-3. Webdrivery: Chrome, Firefox, Opera
