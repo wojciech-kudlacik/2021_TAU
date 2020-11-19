@@ -147,3 +147,6 @@ bazel-testlogs
 
 # secrets
 selenium_assignment/config.json
+
+# logs
+selenium_assignment/logs/*
