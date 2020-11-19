@@ -149,4 +149,4 @@ bazel-testlogs
 selenium_assignment/config.json
 
 # logs
-selenium_assignment/logs/*
+!selenium_assignment/logs/.gitkeep
