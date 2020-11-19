@@ -144,3 +144,6 @@ bazel-testlogs
 /.vscode/
 /.scannerwork/
 /.bazelrc.local
+
+# secrets
+selenium_assignment/config.json
