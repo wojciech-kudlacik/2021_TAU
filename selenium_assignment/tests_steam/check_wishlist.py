@@ -6,12 +6,6 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 from login_steam import login_to_steam as login
 
-import time
-
-# add to wishlist
-# go to wishlist
-# remove from wishlist
-# driver.quit()
 
 driver = webdriver.Chrome()
 
@@ -65,7 +59,7 @@ finally:
     # TODO log to file
     print('test done')
 
-
+driver.quit()
 
 
 
