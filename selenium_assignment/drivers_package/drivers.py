@@ -1,10 +1,15 @@
 from selenium import webdriver
 
+import json
+with open('../config.json', 'r') as file:
+    config = json.load(file)
 
-def choose_drivers(driver_type):
-    if driver_type is "chrome":
+
+def choose_driver():
+    driver_type = config['driver']
+    if driver_type == "chrome":
         return webdriver.Chrome()
-    elif driver_type is "firefox":
+    elif driver_type == "firefox":
         return webdriver.Firefox()
-    elif driver_type is "opera":
+    elif driver_type == "opera":
         return webdriver.Opera()
