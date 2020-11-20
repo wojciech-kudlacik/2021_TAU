@@ -1,3 +1,4 @@
+## Table of contents
 - [Selenium Assignment](#selenium-assignment)
   * [About](#about)
   * [Features](#features)
