@@ -15,3 +15,10 @@ def wait_by_id(webdriver, time_amount, element_id):
         EC.presence_of_element_located((By.ID, element_id))
     )
     return element_to_return
+
+
+def wait_by_class(webdriver, time_amount, class_name):
+    element_to_return = WebDriverWait(webdriver, time_amount).until(
+        EC.presence_of_element_located((By.CLASS_NAME, class_name))
+    )
+    return element_to_return
