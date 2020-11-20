@@ -3,8 +3,8 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/selenium_assignment" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/selenium_assignment/tests_steam" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/selenium_assignment/tests_eobuwie" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/selenium_assignment/test_steam" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/selenium_assignment/test_eobuwie" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/.idea/inspectionProfiles" />
       <excludeFolder url="file://$MODULE_DIR$/selenium_assignment/venv" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
