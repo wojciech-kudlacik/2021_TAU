@@ -134,6 +134,7 @@ venv
 venv3
 py/.idea
 
+
 # Bazel stuff
 bazel-bin
 bazel-genfiles
@@ -147,6 +148,8 @@ bazel-testlogs
 
 # secrets
 selenium_assignment/config.json
+
+selenium_assignment/.idea
 
 # logs
 !selenium_assignment/logs/.gitkeep
