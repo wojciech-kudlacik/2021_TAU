@@ -17,40 +17,45 @@ from helper_methods.helper_methods import wait_by_xpath
 
 from selenium.webdriver.common.keys import Keys
 
-# required for logs to be appended to a file
-create_logfile()
-
 driver = choose_driver()
 
-login(driver)
 
-# hack for chrome - the searchbar was not being loaded in time
-if config['driver'] == 'chrome':
-    time.sleep(5)
+def test_wishlist_eobuwie(driver):
 
-# search for black shoes
-driver.find_element_by_xpath('//*[@id="top"]/body/header/div[4]/div[1]/form/input').send_keys("buty czarne")
-driver.find_element_by_xpath('//*[@id="top"]/body/header/div[4]/div[1]/form/input').send_keys(Keys.ENTER)
+    # required for logs to be appended to a file
+    create_logfile()
 
-if config['driver'] == 'firefox':
-    time.sleep(5)
-# add the first result to favourites
-try:
-    wait_by_xpath(driver, 10, '//*[@id="top"]/body/div[3]/div/div[4]/ul/li[1]/div/a/img')
-finally:
-    driver.find_element_by_xpath('//*[@id="top"]/body/div[3]/div/div[4]/ul/li[1]/div/button').click()
-    time.sleep(5)
-    # go to favourites
-    driver.find_element_by_xpath('//*[@id="top"]/body/header/div[3]/div/div/div[2]/div/a[5]').click()
+    login(driver)
 
-# delete from favourites
-try:
-    wait_by_xpath(driver, 10, '//*[@id="top"]/body/div[3]/div/ul/li/div/a/div[1]/img')
-finally:
-    driver.find_element_by_xpath('//*[@id="top"]/body/div[3]/div/ul/li/div/button').click()
+    # hack for chrome - the searchbar was not being loaded in time
+    if config['driver'] == 'chrome':
+        time.sleep(5)
 
-time.sleep(2)
-create_log(20, "test finished successfully")
+    # search for black shoes
+    driver.find_element_by_xpath('//*[@id="top"]/body/header/div[4]/div[1]/form/input').send_keys("buty czarne")
+    driver.find_element_by_xpath('//*[@id="top"]/body/header/div[4]/div[1]/form/input').send_keys(Keys.ENTER)
 
-driver.quit()
+    if config['driver'] == 'firefox':
+        time.sleep(5)
+    # add the first result to favourites
+    try:
+        wait_by_xpath(driver, 10, '//*[@id="top"]/body/div[3]/div/div[4]/ul/li[1]/div/a/img')
+    finally:
+        driver.find_element_by_xpath('//*[@id="top"]/body/div[3]/div/div[4]/ul/li[1]/div/button').click()
+        time.sleep(5)
+        # go to favourites
+        driver.find_element_by_xpath('//*[@id="top"]/body/header/div[3]/div/div/div[2]/div/a[5]').click()
+
+    # delete from favourites
+    try:
+        wait_by_xpath(driver, 10, '//*[@id="top"]/body/div[3]/div/ul/li/div/a/div[1]/img')
+    finally:
+        driver.find_element_by_xpath('//*[@id="top"]/body/div[3]/div/ul/li/div/button').click()
+
+    time.sleep(2)
+    create_log(20, "test finished successfully")
+
+    driver.quit()
+
+test_wishlist_eobuwie(driver)
 
