@@ -153,3 +153,6 @@ selenium_assignment/.idea
 
 # logs
 !selenium_assignment/logs/.gitkeep
+
+#.DS_store
+/junit/.DS_Store
