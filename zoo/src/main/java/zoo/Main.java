@@ -12,6 +12,15 @@ public class Main {
 	public static void main(String[] args) {
 		Main main = new Main();
 		main.totalWeightOfAnimals(10, 20);
+		
+		int[] animalsWeight = new int[3];
+		animalsWeight[0] = 10;
+		animalsWeight[1] = 20;
+		animalsWeight[2] = 30;
+		
+		main.totalWeightOfMoreThanTwoAnimals(animalsWeight);
+		main.averageWeightOfAnimals(animalsWeight);
+		
 		main.runMenu();
 		
 	}
@@ -120,10 +129,31 @@ public class Main {
 	}
 	
 	// New Features - Animal Based calculations
-	public void totalWeightOfAnimals(int firstAnimal, int secondAnimal) {
+	public int totalWeightOfAnimals(int firstAnimal, int secondAnimal) {
 		int result = firstAnimal + secondAnimal;
 		
 		System.out.println("Both animals weight: " + result);
+		
+		return result;
+	}
+	
+	public int totalWeightOfMoreThanTwoAnimals(int[] animals) {
+		int totalWeight = 0;
+		for (int value : animals) {
+			totalWeight += value;
+		}
+		
+		System.out.println("All animals weight: " + totalWeight);
+		return totalWeight;
+	}
+	
+	public double averageWeightOfAnimals(int[] animals) {
+		int sum = totalWeightOfMoreThanTwoAnimals(animals);
+		double averageWeight = sum / animals.length;
+		
+		System.out.println("On average the animals weight: " + averageWeight);
+		
+		return (double) averageWeight;
 	}
 	 
 	
