@@ -11,7 +11,9 @@ public class Main {
 	
 	public static void main(String[] args) {
 		Main main = new Main();
+		main.totalWeightOfAnimals(10, 20);
 		main.runMenu();
+		
 	}
 	
 
@@ -116,5 +118,13 @@ public class Main {
 			System.out.println("This index is not available");
 		}
 	}
+	
+	// New Features - Animal Based calculations
+	public void totalWeightOfAnimals(int firstAnimal, int secondAnimal) {
+		int result = firstAnimal + secondAnimal;
+		
+		System.out.println("Both animals weight: " + result);
+	}
+	 
 	
 }
