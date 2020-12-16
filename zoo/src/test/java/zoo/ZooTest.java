@@ -15,6 +15,9 @@ class ZooTest {
 		main.addAnimal("Leon");
 		main.addAnimal("Felix");
 		main.addAnimal("Dumbo");
+		Main.animalsWeight[0] = 10;
+		Main.animalsWeight[1] = 20;
+		Main.animalsWeight[2] = 30;
 	}
 	
 	@AfterEach
@@ -52,36 +55,37 @@ class ZooTest {
 	
 	// New tests
 	
-	@Test void testTotalWeightOfAnimals() {
+	@Test void testTotalWeightOfAnimalsBool() {
 		int firstAnimal = 20;
 		int secondAnimal = 10;
 		int result = main.totalWeightOfAnimals(firstAnimal, secondAnimal);
 		assertTrue(result == 30);
 	}
 	
+	@Test void testTotalWeightOfAnimals() {
+		int firstAnimal = 20;
+		int secondAnimal = 10;
+		int result = main.totalWeightOfAnimals(firstAnimal, secondAnimal);
+		assertEquals(result, 30);
+	}
+	
 	@Test void testTotalWeightOfMoreThanTwoAnimals() {
-		int[] animalsWeight = new int[3];
-		animalsWeight[0] = 10;
-		animalsWeight[1] = 20;
-		animalsWeight[2] = 30;
 		int expected = 60;
-		int result = main.totalWeightOfMoreThanTwoAnimals(animalsWeight);
+		int result = main.totalWeightOfMoreThanTwoAnimals(Main.animalsWeight);
 		
 		assertEquals(expected, result); 
 
 	}
 	
 	@Test void testAverageWeightOfAnimals() {
-		int[] animalsWeight = new int[3];
-		animalsWeight[0] = 10;
-		animalsWeight[1] = 20;
-		animalsWeight[2] = 30;
 		double expected = 20.0;
-		double result = main.averageWeightOfAnimals(animalsWeight);
+		double result = main.averageWeightOfAnimals(Main.animalsWeight);
 		
 		assertEquals(expected, result); 
 
 	}
+	
+	
 	
 	
 

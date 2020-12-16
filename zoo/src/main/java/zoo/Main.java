@@ -7,16 +7,14 @@ import java.util.Scanner;
 public class Main {
 	boolean exit;
 	ArrayList<String> animals = new ArrayList<String>();
-	
+	static int[] animalsWeight = new int[3];  
 	
 	public static void main(String[] args) {
 		Main main = new Main();
 		main.totalWeightOfAnimals(10, 20);
-		
-		int[] animalsWeight = new int[3];
-		animalsWeight[0] = 10;
-		animalsWeight[1] = 20;
-		animalsWeight[2] = 30;
+		Main.animalsWeight[0] = 10;
+		Main.animalsWeight[1] = 20;
+		Main.animalsWeight[2] = 30;
 		
 		main.totalWeightOfMoreThanTwoAnimals(animalsWeight);
 		main.averageWeightOfAnimals(animalsWeight);
