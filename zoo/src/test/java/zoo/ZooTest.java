@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class test {
+class ZooTest {
 	
 	private Main main = new Main();
 	
@@ -49,6 +49,41 @@ class test {
 				() -> assertEquals(expectedValue2, actualValue2)
 			);
 	}
+	
+	// New tests
+	
+	@Test void testTotalWeightOfAnimals() {
+		int firstAnimal = 20;
+		int secondAnimal = 10;
+		int result = main.totalWeightOfAnimals(firstAnimal, secondAnimal);
+		assertTrue(result == 30);
+	}
+	
+	@Test void testTotalWeightOfMoreThanTwoAnimals() {
+		int[] animalsWeight = new int[3];
+		animalsWeight[0] = 10;
+		animalsWeight[1] = 20;
+		animalsWeight[2] = 30;
+		int expected = 60;
+		int result = main.totalWeightOfMoreThanTwoAnimals(animalsWeight);
+		
+		assertEquals(expected, result); 
+
+	}
+	
+	@Test void testAverageWeightOfAnimals() {
+		int[] animalsWeight = new int[3];
+		animalsWeight[0] = 10;
+		animalsWeight[1] = 20;
+		animalsWeight[2] = 30;
+		double expected = 20.0;
+		double result = main.averageWeightOfAnimals(animalsWeight);
+		
+		assertEquals(expected, result); 
+
+	}
+	
+	
 
 //  How an unhandled exception might be dealt with: 	
 //	@Test

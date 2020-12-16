@@ -4,8 +4,36 @@
   <artifactId>zoo</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>zoo_project</name>
-  <build>
+
+  
+  <dependencies>
+  
+  	<dependency>
+     	<groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-engine</artifactId>
+        <version>5.7.0-M1</version>
+        <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+     	<groupId>org.junit.vintage</groupId>
+        <artifactId>junit-vintage-engine</artifactId>
+        <version>5.7.0-M1</version>
+        <scope>test</scope>
+    </dependency>
+    	
+  </dependencies>
+  
+    <build>
         <plugins>
+        
+        	<plugin>
+        		<groupId>org.apache.maven.plugins</groupId>
+        		<artifactId>maven-surefire-plugin</artifactId>
+        		<version>3.0.0-M3</version>
+        	</plugin>
+        	
+        
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -16,16 +44,13 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
+            
         </plugins>
     </build>
-  
-  <dependencies>
-  	<dependency>
-     	<groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter-engine</artifactId>
-        <version>5.4.0</version>
-        <scope>test</scope>
-    </dependency>
-    	
-  </dependencies>
+    
+    
+    
+    
+    
+    
 </project>
