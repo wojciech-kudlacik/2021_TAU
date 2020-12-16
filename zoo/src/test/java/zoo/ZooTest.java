@@ -6,6 +6,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import static com.github.stefanbirkner.systemlambda.SystemLambda.*;
+
+
 class ZooTest {
 	
 	private Main main = new Main();
@@ -52,48 +55,67 @@ class ZooTest {
 				() -> assertEquals(expectedValue2, actualValue2)
 			);
 	}
-	
+//	
 	// New tests
 	
-	@Test void testDeleteAnimal() {
+	@Test
+	public void testDeleteAnimal() {
 		boolean actual = main.deleteAnimal(2);
 		assertEquals(true, actual);
 	}
 	
-	@Test void testDeleteAnimalIncorectIndex() {
+	@Test
+	public void testDeleteAnimalIncorectIndex() {
 		boolean actual = main.deleteAnimal(4);
 		assertEquals(false, actual);
 	}
 	
-	@Test void animalsWeightLength() {
+	@Test 
+	public void animalsWeightLength() {
 		assertEquals(Main.animalsWeight.length, 3);
 	}
 	
-	@Test void testTotalWeightOfAnimalsBool() {
+	@Test 
+	public void testTotalWeightOfAnimalsBool() {
 		int firstAnimal = 20;
 		int secondAnimal = 10;
 		int result = main.totalWeightOfAnimals(firstAnimal, secondAnimal);
 		assertTrue(result == 30);
 	}
 	
-	@Test void testTotalWeightOfAnimals() {
+	@Test
+	public void testTotalWeightOfAnimals() {
 		int firstAnimal = 20;
 		int secondAnimal = 10;
 		int result = main.totalWeightOfAnimals(firstAnimal, secondAnimal);
 		assertEquals(result, 30);
 	}
 	
-	@Test void testTotalWeightOfMoreThanTwoAnimals() {
+	@Test
+	public void testTotalWeightOfMoreThanTwoAnimals() {
 		int result = main.totalWeightOfMoreThanTwoAnimals(Main.animalsWeight);
 		assertEquals(result, 60);
 	}
 	
-	@Test void testAverageWeightOfAnimals() {
+	@Test 
+	public void testAverageWeightOfAnimals() {
 		double expected = 20.0;
 		double result = main.averageWeightOfAnimals(Main.animalsWeight);
 		
 		assertEquals(expected, result); 
 
+	}
+	
+	// New dependencies tests
+
+	@Test
+	void testSystemLambda() throws Exception {
+
+	    String text = tapSystemOut(() -> {
+	    	System.out.print("Hello System Lambda");
+	    });
+
+	    assertEquals("Hello System Lambda", text.trim());
 	}
 		
 
