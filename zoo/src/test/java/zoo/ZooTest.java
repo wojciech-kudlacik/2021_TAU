@@ -8,6 +8,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import static com.github.stefanbirkner.systemlambda.SystemLambda.*;
 
+import org.joda.time.DateTimeZone;
+
 
 class ZooTest {
 	
@@ -117,6 +119,22 @@ class ZooTest {
 
 	    assertEquals("Hello System Lambda", text.trim());
 	}
+	
+	@Test
+	void testSystemLambdaMultipleLines(
+	) throws Exception {
+	  String text = tapSystemOutNormalized(() -> {
+	    System.out.println("Sys Lambda Line 1");
+	    System.out.println("Sys Lambda Line 2");
+	  });
+	  assertEquals("Sys Lambda Line 1\nSys Lambda Line 2\n", text);
+	}
+	
+    @Test
+    public void testWarsawStandardOffset() {
+        DateTimeZone zone = DateTimeZone.forID("Europe/Warsaw");
+        assertEquals(zone.isStandardOffset(2), true);
+    }
 		
 
 //  How an unhandled exception might be dealt with: 	
