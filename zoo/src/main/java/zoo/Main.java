@@ -111,18 +111,22 @@ public class Main {
 		}
 	}
 	
-	public void deleteAnimal(int animalIndex) throws IndexOutOfBoundsException {
-		int correctIndex = animalIndex - 1; 
+	public boolean deleteAnimal(int animalIndex) throws IndexOutOfBoundsException {
+		int correctIndex = animalIndex - 1;
+		boolean animalRemoved = false;
 		
 		if (correctIndex >= 0) {
 			try {
 				animals.remove(correctIndex);
 				System.out.println("Animal removed");
+				return animalRemoved = true;
 			} catch(IndexOutOfBoundsException e) {
 				System.out.println("This index is not available: " + e);
+				return animalRemoved;
 			}
 		} else {
 			System.out.println("This index is not available");
+			return animalRemoved;
 		}
 	}
 	

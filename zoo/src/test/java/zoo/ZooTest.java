@@ -55,6 +55,20 @@ class ZooTest {
 	
 	// New tests
 	
+	@Test void testDeleteAnimal() {
+		boolean actual = main.deleteAnimal(2);
+		assertEquals(true, actual);
+	}
+	
+	@Test void testDeleteAnimalIncorectIndex() {
+		boolean actual = main.deleteAnimal(4);
+		assertEquals(false, actual);
+	}
+	
+	@Test void animalsWeightLength() {
+		assertEquals(Main.animalsWeight.length, 3);
+	}
+	
 	@Test void testTotalWeightOfAnimalsBool() {
 		int firstAnimal = 20;
 		int secondAnimal = 10;
@@ -70,11 +84,8 @@ class ZooTest {
 	}
 	
 	@Test void testTotalWeightOfMoreThanTwoAnimals() {
-		int expected = 60;
 		int result = main.totalWeightOfMoreThanTwoAnimals(Main.animalsWeight);
-		
-		assertEquals(expected, result); 
-
+		assertEquals(result, 60);
 	}
 	
 	@Test void testAverageWeightOfAnimals() {
@@ -84,10 +95,7 @@ class ZooTest {
 		assertEquals(expected, result); 
 
 	}
-	
-	
-	
-	
+		
 
 //  How an unhandled exception might be dealt with: 	
 //	@Test
