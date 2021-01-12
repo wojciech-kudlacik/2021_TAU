@@ -1,15 +1,21 @@
 package zoo;
 
 import java.util.ArrayList;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import zoo.Animal;
+
 public class Main {
+	static Animal animal = new Animal(false, "food", 2);
+	
 	boolean exit;
 	ArrayList<String> animals = new ArrayList<String>();
 	static int[] animalsWeight = new int[3];  
 	
 	public static void main(String[] args) {
+//		System.out.println(animal.getNoOfLegs());
 		Main main = new Main();
 		main.totalWeightOfAnimals(10, 20);
 		Main.animalsWeight[0] = 10;
