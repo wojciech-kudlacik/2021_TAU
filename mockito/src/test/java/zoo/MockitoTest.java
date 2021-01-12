@@ -33,14 +33,7 @@ class MockitoTest {
 		assertEquals("Food", eats);
 	}
 	
-	
-	
-//	@Test
-//	public void testAnimalLegs() {
-//		int expected = 2;
-//		int actual = animal.getNoOfLegs(); 
-//		assertEquals(expected, actual);
-//	}
+	// Mocks for the Main class 
 	
 
 }

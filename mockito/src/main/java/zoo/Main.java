@@ -15,7 +15,6 @@ public class Main {
 	static int[] animalsWeight = new int[3];  
 	
 	public static void main(String[] args) {
-//		System.out.println(animal.getNoOfLegs());
 		Main main = new Main();
 		main.totalWeightOfAnimals(10, 20);
 		Main.animalsWeight[0] = 10;
@@ -162,6 +161,21 @@ public class Main {
 		System.out.println("On average the animals weight: " + averageWeight);
 		
 		return (double) averageWeight;
+	}
+	
+	// New Features for Mockito - new data types
+	public float averageAnimalHeight(float firstAnimal, float secondAnimal) {
+		float averageHeight = firstAnimal + secondAnimal;
+		
+		System.out.println("Average Height: " + averageHeight);
+		
+		return averageHeight;
+	}
+	
+	public char animalGender(char gender) {
+		System.out.println("Animal Gender: " + gender);
+		
+		return gender;
 	}
 	 
 	
