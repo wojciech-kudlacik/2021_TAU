@@ -158,3 +158,4 @@ selenium_assignment/.idea
 /junit/.DS_Store
 /.metadata/
 zoo/target/
+mockito/target
