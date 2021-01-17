@@ -24,6 +24,20 @@ You need to have Ruby installed. Preferably anything above 2.2.
 Refer to [this guide](https://www.ruby-lang.org/en/downloads/) on the official Ruby website on how to install it on different OS.
 [RVM](https://rvm.io/) might come in handy as well.
 
+But, if you won't be able to run it, consider creating a Gemfile (or you might already have it present in your project) and add this to it:
+
+```ruby
+#Gemfile
+source 'https://rubygems.org'
+
+gem 'minitest'
+```
+
+and then run:
+```bash
+bundle install
+```
+
 ## How to run
 In order to run the example tests present in repo all you need to do is
 ```bash
